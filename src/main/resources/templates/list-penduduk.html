@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div th:replace="fragments/fragment :: link"></div>
+<title>List Penduduk</title>
+</head>
+<body>
+	
+	<div th:replace="fragments/fragment :: header"></div>
+	<h2>Daftar Penduduk</h2>
+		<table class="table table-striped">
+			<thead>
+			<th>NIK</th>
+			<th>Nama</th>
+			<th>Jenis Kelamin</th>
+		</thead>
+		<tbody th:each="penduduk,iterationStatus:${kumpulanPenduduk}">
+	
+		<tr>
+			<td th:text='${penduduk.nik}'>Nik</td>
+			<td th:text='${penduduk.nama}'>Nama</td>
+			<td th:text='${penduduk.jenisKelamin}'>Jenis Kelamin</td>
+		</tr>
+				
+			</tbody>
+		</table>
+</body>
+
+</html>

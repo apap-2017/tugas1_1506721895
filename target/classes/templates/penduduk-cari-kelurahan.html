@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div th:replace="fragments/fragment :: link"></div>
+<title>Cari Penduduk</title>
+</head>
+<body>	
+		<div th:replace="fragments/fragment :: header"></div>
+		<h2>Lihat Data Penduduk berdasarkan Kota</h2>
+		<form action="/penduduk/cari" method="GET">
+		<select name="kt" th:readonly="true" th:value="${kt}" >
+				<option th:each="kota,iterationStatus:${kumpulanKota}" selected =""  th:value="${kota.id}"   th:text="${kota.namaKota}"></option>
+		
+		</select>
+		
+		
+		<h2 >Lihat Data Penduduk berdasarkan kecamatan</h2>
+		
+		<select name="kc" th:readonly="true" th:value="${kc}" >
+				<option th:each="kecamatan,iterationStatus:${kumpulanKecamatan}" selected ="selected"  th:value="${kecamatan.id}"   th:text="${kecamatan.namaKecamatan}"></option>
+		</select>
+		
+		<h2>Lihat Data Penduduk berdasarkan Kelurahan</h2>
+		<select name="kl" th:value="${kl}"  >
+				<option th:each="kelurahan,iterationStatus:${kumpulanKelurahan}" selected =""  th:value="${kelurahan.id}"   th:text="${kelurahan.namaKelurahan}"></option>
+		
+		</select>
+		<button type="submit">Lihat</button>
+		</form>
+</body>
+</html>

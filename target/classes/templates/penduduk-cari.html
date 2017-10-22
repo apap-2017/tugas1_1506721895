@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div th:replace="fragments/fragment :: link"></div>
+<title>Cari Penduduk</title>
+</head>
+<body>	
+		<div th:replace="fragments/fragment :: header"></div>
+		<h2>Lihat Data Penduduk berdasarkan Kota</h2>
+		<form action="/penduduk/cari" method="GET">
+		<select name="kt"  >
+				<option th:each="kota,iterationStatus:${kumpulanKota}" selected =""  th:value="${kota.id}"   th:text="${kota.namaKota}"></option>
+		
+		</select>
+		<div>
+		<button type="submit" >Lihat</button>
+		</div>
+		</form>
+</body>
+</html>

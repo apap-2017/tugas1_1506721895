@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+<div th:replace="fragments/fragment :: link"></div>
+		<title>Sukses</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+
+	<body>
+	<div th:replace="fragments/fragment :: header"></div>
+		<h2>Sukses!</h2>
+		<h3 th:text="'Penduduk dengan NIK '+ ${nik} +' '+'berhasil ditambahkan' "></h3>
+   	 </body>
+
+</html>

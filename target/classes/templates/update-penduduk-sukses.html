@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div th:replace="fragments/fragment :: link"></div>
+		<title>Update</title>
+	</head>
+	<body>
+	<div th:replace="fragments/fragment :: header"></div>
+		<h2>Sukses!</h2>
+		<h3 th:text="'Penduduk dengan NIK ' +${nikModel} +' berhasil ditambah!'"></h3>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<div th:replace="fragments/fragment :: link"></div>
+		<title>Data Keluarga</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+
+	<body>
+	<div th:replace="fragments/fragment :: header"></div>
+		<div>
+			<h2 th:text="'Lihat Data Keluarga - ' + ${nomorKk}"></h2>
+			<h4 th:text="'NKK = ' +${nomorKk}"></h4>
+			<h4 th:text="'Alamat = ' +${domisili.alamat}"></h4>
+			<h4 th:text="'RT/RW = ' +${domisili.rt}+' /'+${domisili.rw}"></h4>
+			<h4 th:text="'Kelurahan/Desa = ' +${domisili.namaKelurahan}"></h4>
+			<h4 th:text="'Kecamatan = ' +${domisili.namaKecamatan}"></h4>
+			<h4 th:text="'Kota = ' +${domisili.namaKota}"></h4>
+		</div>
+		<hr/>
+    		<div th:each="keluarga,iterationStatus:${satuKeluarga}">
+    		
+    			<table class="table table-striped">
+    				<thead>
+    				
+    					<th>No.</th>
+    					<th>Nama Lengkap</th>
+    					<th>NIK</th>
+    					<th>Jenis Kelamin</th>
+    					<th>Tempat Lahir</th>
+    					<th>Tanggal Lahir</th>
+    					<th>Agama</th>
+    					<th>Pekerjaan</th>
+    					<th>Status Perkawinan</th>
+    					<th>Status dalam Keluarga</th>
+    					<th>Kewarganegaraan</th>
+    					
+    				</thead>
+    				<tbody>
+    					<td th:text="${iterationStatus.count}">NIK Anggota Keluarga</td>
+    					<td th:text="${keluarga.nama}">Nama Anggota Keluarga</td>
+    					<td th:text="${keluarga.nik}">NIK Anggota Keluarga</td>
+    					<td th:if="${keluarga.jenisKelamin} == 1" th:text="Perempuan">Jenis Kelamin Anggota Keluarga</td>
+    					<td th:if="${keluarga.jenisKelamin} == 0" th:text="Laki-Laki">Jenis Kelamin Anggota Keluarga</td>
+    					<td th:text="${keluarga.tempatLahir}">Tempat Lahir Anggota Keluarga</td>
+    					<td th:text="${keluarga.tanggalLahir}">Tanggal Lahir Anggota Keluarga</td>
+    					<td th:text="${keluarga.agama}">Agama Anggota Keluarga</td>
+    					<td th:text="${keluarga.pekerjaan}">Pekerjaan Anggota Keluarga</td>
+    					<td th:text="${keluarga.statusPerkawinan}">Status Perkawinan Anggota Keluarga</td>
+    					<td th:text="${keluarga.statusDalamKeluarga}">Status Keluarga Anggota Keluarga</td>
+    					<td th:if="${keluarga.isWni} == 1" th:text="WNI">Kewarganegaraan Anggota Keluarga</td>
+    					<td th:if="${keluarga.isWni} == 0" th:text="WNA">Kewarganegaraan Anggota Keluarga</td>
+    					
+    				</tbody>
+    			</table>
+			<hr/>
+		</div>
+   	 </body>
+
+</html>

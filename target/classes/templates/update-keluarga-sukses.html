@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div th:replace="fragments/fragment :: link"></div>
+<title>Sukses</title>
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<h2>Sukses!</h2>
+	<h3 th:text="'Keluarga dengan nkk '+${nkk}+' berhasil diubah'"></h3>
+</body>
+</html>
